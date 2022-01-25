@@ -1,13 +1,13 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const Badge = props => {
   return /*#__PURE__*/_react.default.createElement("div", {
@@ -17,5 +17,11 @@ const Badge = props => {
   }, props.value || 0));
 };
 
+Badge.__docgenInfo = {
+  "description": "",
+  "methods": [],
+  "displayName": "Badge"
+};
 var _default = Badge;
 exports.default = _default;
+module.exports = exports.default;
