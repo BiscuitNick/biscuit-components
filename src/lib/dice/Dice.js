@@ -1,21 +1,9 @@
-import "./dice.css";
-
-// import d0 from "./images/0.png";
-// import d1 from "./images/1.png";
-// import d2 from "./images/2.png";
-// import d3 from "./images/3.png";
-// import d4 from "./images/4.png";
-// import d5 from "./images/5.png";
-// import d6 from "./images/6.png";
-// import d7 from "./images/7.png";
-// import d8 from "./images/8.png";
-// import d9 from "./images/9.png";
-
-import { useState } from "react";
+// import "./dice.css";
+import React, { useState } from "react";
 
 const sides = ["front", "back", "left", "right", "top", "bottom"];
 
-const Dice = ({ size = 200, n, handleClick }) => {
+const Dice = ({ size = 200, n, handleClick, images }) => {
   const [side, setSide] = useState(sides[n] || "front");
   const width = size;
   const height = size;
@@ -32,37 +20,37 @@ const Dice = ({ size = 200, n, handleClick }) => {
       width,
       height,
       transform: `rotateY(0deg) translateZ(${size / 2}px)`,
-      // backgroundImage: `url(${d6})`,
+      backgroundImage: images ? `url(${images[6]})` : null,
     },
     back: {
       width,
       height,
       transform: `rotateY(180deg) translateZ(${size / 2}px)`,
-      // backgroundImage: `url(${d1})`,
+      backgroundImage: images ? `url(${images[1]})` : null,
     },
     right: {
       width,
       height,
       transform: `rotateY(90deg) translateZ(${size / 2}px)`,
-      // backgroundImage: `url(${d5})`,
+      backgroundImage: images ? `url(${images[5]})` : null,
     },
     left: {
       width,
       height,
       transform: `rotateY(-90deg) translateZ(${size / 2}px)`,
-      // backgroundImage: `url(${d2})`,
+      backgroundImage: images ? `url(${images[2]})` : null,
     },
     top: {
       width,
       height,
       transform: `rotateX(90deg) translateZ(${size / 2}px)`,
-      // backgroundImage: `url(${d3})`,
+      backgroundImage: images ? `url(${images[3]})` : null,
     },
     bottom: {
       width,
       height,
       transform: `rotateX(-90deg) translateZ(${size / 2}px)`,
-      // backgroundImage: `url(${d4})`,
+      backgroundImage: images ? `url(${images[4]})` : null,
     },
   };
   const rotations = {
@@ -111,10 +99,10 @@ const Dice = ({ size = 200, n, handleClick }) => {
       }}
       onClick={() => {
         const newSide = Math.floor(Math.random() * sides.length);
-        setComplete(Math.floor(Math.random() * 10 - 20) * 360);
-        setArbitrary(Math.floor(Math.random() * 10 - 20) * 360);
+        setComplete(Math.floor(Math.random() * 10 - 20) * 720);
+        // setArbitrary(Math.floor(Math.random() * 10 - 20) * 360);
 
-        // setArbitrary(Math.floor(Math.random() * 1080 - 2160));
+        setArbitrary(Math.floor(Math.random() * 1080 - 2160));
         console.log(newSide, sides[newSide]);
         setSide(sides[newSide]);
       }}

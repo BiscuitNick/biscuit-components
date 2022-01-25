@@ -11,9 +11,11 @@ var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/de
 
 require("core-js/modules/web.dom-collections.iterator.js");
 
-require("./dice.css");
+var _react = _interopRequireWildcard(require("react"));
 
-var _react = require("react");
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
@@ -25,7 +27,8 @@ const Dice = _ref => {
   let {
     size = 200,
     n,
-    handleClick
+    handleClick,
+    images
   } = _ref;
   const [side, setSide] = (0, _react.useState)(sides[n] || "front");
   const width = size;
@@ -36,38 +39,38 @@ const Dice = _ref => {
     front: {
       width,
       height,
-      transform: "rotateY(0deg) translateZ(".concat(size / 2, "px)") // backgroundImage: `url(${d6})`,
-
+      transform: "rotateY(0deg) translateZ(".concat(size / 2, "px)"),
+      backgroundImage: images ? "url(".concat(images[6], ")") : null
     },
     back: {
       width,
       height,
-      transform: "rotateY(180deg) translateZ(".concat(size / 2, "px)") // backgroundImage: `url(${d1})`,
-
+      transform: "rotateY(180deg) translateZ(".concat(size / 2, "px)"),
+      backgroundImage: images ? "url(".concat(images[1], ")") : null
     },
     right: {
       width,
       height,
-      transform: "rotateY(90deg) translateZ(".concat(size / 2, "px)") // backgroundImage: `url(${d5})`,
-
+      transform: "rotateY(90deg) translateZ(".concat(size / 2, "px)"),
+      backgroundImage: images ? "url(".concat(images[5], ")") : null
     },
     left: {
       width,
       height,
-      transform: "rotateY(-90deg) translateZ(".concat(size / 2, "px)") // backgroundImage: `url(${d2})`,
-
+      transform: "rotateY(-90deg) translateZ(".concat(size / 2, "px)"),
+      backgroundImage: images ? "url(".concat(images[2], ")") : null
     },
     top: {
       width,
       height,
-      transform: "rotateX(90deg) translateZ(".concat(size / 2, "px)") // backgroundImage: `url(${d3})`,
-
+      transform: "rotateX(90deg) translateZ(".concat(size / 2, "px)"),
+      backgroundImage: images ? "url(".concat(images[3], ")") : null
     },
     bottom: {
       width,
       height,
-      transform: "rotateX(-90deg) translateZ(".concat(size / 2, "px)") // backgroundImage: `url(${d4})`,
-
+      transform: "rotateX(-90deg) translateZ(".concat(size / 2, "px)"),
+      backgroundImage: images ? "url(".concat(images[4], ")") : null
     }
   };
   const rotations = {
@@ -91,7 +94,8 @@ const Dice = _ref => {
     }
   };
   console.log(completeRotations, arbitraryRotation);
-  const Cube = /*#__PURE__*/React.createElement("div", {
+
+  const Cube = /*#__PURE__*/_react.default.createElement("div", {
     className: "scene",
     style: {
       width,
@@ -101,23 +105,24 @@ const Dice = _ref => {
     },
     onClick: () => {
       const newSide = Math.floor(Math.random() * sides.length);
-      setComplete(Math.floor(Math.random() * 10 - 20) * 360);
-      setArbitrary(Math.floor(Math.random() * 10 - 20) * 360); // setArbitrary(Math.floor(Math.random() * 1080 - 2160));
+      setComplete(Math.floor(Math.random() * 10 - 20) * 720); // setArbitrary(Math.floor(Math.random() * 10 - 20) * 360);
 
+      setArbitrary(Math.floor(Math.random() * 1080 - 2160));
       console.log(newSide, sides[newSide]);
       setSide(sides[newSide]);
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: "cube",
     style: _objectSpread(_objectSpread({}, rotations[side]), {}, {
       width,
       height
     })
-  }, Object.keys(faces).map((side, i) => /*#__PURE__*/React.createElement("div", {
+  }, Object.keys(faces).map((side, i) => /*#__PURE__*/_react.default.createElement("div", {
     key: i,
     className: "cube__face",
     style: faces[side]
   }))));
+
   return Cube;
 };
 
