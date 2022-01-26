@@ -1,13 +1,16 @@
 {
   "name": "biscuit-land-components",
-  "description": "npm package test",
+  "description": "Dice Components",
   "author": "BiscuitNick",
-  "version": "0.3.5",
+  "version": "0.5.1",
   "private": false,
   "files": [
     "dist",
     "README.md"
   ],
+  "dependencies": {
+    "@react-spring/web": "^9.4.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/biscuitNick/biscuit-components"

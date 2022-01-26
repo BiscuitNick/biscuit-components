@@ -23,9 +23,17 @@ Object.defineProperty(exports, "Dice", {
     return _Dice.default;
   }
 });
+Object.defineProperty(exports, "DiceClock", {
+  enumerable: true,
+  get: function get() {
+    return _DiceClock.DiceClock;
+  }
+});
 
 var _Badge = _interopRequireDefault(require("./components/Badge"));
 
 var _Button = _interopRequireDefault(require("./components/Button"));
 
 var _Dice = _interopRequireDefault(require("./dice/Dice"));
+
+var _DiceClock = require("./dice/DiceClock");

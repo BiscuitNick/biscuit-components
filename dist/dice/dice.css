@@ -29,13 +29,6 @@ body {
   transform: translateZ(-100px);
   transition: transform 1s;
 }
-
-.cube.show-front {
-  transform: translateZ(-100px) rotateY(0deg) rotateZ(45deg);
-}
-.cube.show-right {
-  transform: translateZ(-100px) rotateY(-90deg) rotateX(45deg);
-}
 .cube.show-back {
   transform: translateZ(-100px) rotateY(-180deg) rotateZ(45deg);
 }
@@ -47,6 +40,12 @@ body {
 }
 .cube.show-bottom {
   transform: translateZ(-100px) rotateX(90deg) rotateY(45deg);
+}
+.cube.show-right {
+  transform: translateZ(-100px) rotateY(-90deg) rotateX(45deg);
+}
+.cube.show-front {
+  transform: translateZ(-100px) rotateY(0deg) rotateZ(45deg);
 }
 
 .cube__face {
