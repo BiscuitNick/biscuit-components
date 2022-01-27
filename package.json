@@ -1,18 +1,53 @@
 {
   "name": "biscuit-land-components",
-  "description": "Dice Components",
+  "description": "Components",
   "author": "BiscuitNick",
-  "version": "0.5.2",
+  "version": "2.1.0",
   "private": false,
   "files": [
     "dist",
+    "/dice",
+    "/konva",
     "README.md"
   ],
   "dependencies": {
-    "@react-spring/web": "^9.4.2"
+    "@react-spring/web": "^9.4.2",
+    "konva": "^7.2.5",
+    "react-konva": "^17.0.2-5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/biscuitNick/biscuit-components"
+    "url": "git+https://github.com/biscuitnick/biscuit-land-components"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.12",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-proposal-decorators": "^7.16.7",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.16.10",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/runtime-corejs3": "^7.16.8",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "babel-plugin-add-module-exports": "^1.0.4",
+    "babel-plugin-react-docgen": "^4.2.1",
+    "core-js": "3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.0",
+    "web-vitals": "^2.1.4"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
