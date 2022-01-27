@@ -2,7 +2,7 @@
   "name": "biscuit-land-components",
   "description": "Components",
   "author": "BiscuitNick",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "private": false,
   "files": [
     "dist",
