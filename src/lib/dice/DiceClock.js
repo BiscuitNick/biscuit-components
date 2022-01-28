@@ -55,7 +55,6 @@ const oneToSix = [
 
 export const DiceClock = (props) => {
   const { hourStyle, minuteStyle, secondStyle } = props;
-  //   const { width, height } = useWindowSize();
   const [hourDice, setHours] = useState([6, 6]);
   const [minuteDice, setMinutes] = useState([5, 9]);
   const [secondDice, setSeconds] = useState([5, 9]);
@@ -73,8 +72,6 @@ export const DiceClock = (props) => {
     }, 1000);
     return () => clearInterval(updateTime);
   }, []);
-
-  console.log(hourDice, minuteDice, secondDice);
 
   return (
     <>
@@ -113,7 +110,7 @@ export const DiceClock = (props) => {
           ...secondStyle,
         }}
       >
-        <Dice {...props} n={secondDice[0]} />
+        <Dice {...props} n={secondDice[0]} images={zeroToFive} />
         <Dice
           {...props}
           n={secondDice[1]}

@@ -49,8 +49,7 @@ const DiceClock = props => {
     hourStyle,
     minuteStyle,
     secondStyle
-  } = props; //   const { width, height } = useWindowSize();
-
+  } = props;
   const [hourDice, setHours] = (0, _react.useState)([6, 6]);
   const [minuteDice, setMinutes] = (0, _react.useState)([5, 9]);
   const [secondDice, setSeconds] = (0, _react.useState)([5, 9]);
@@ -66,7 +65,6 @@ const DiceClock = props => {
     }, 1000);
     return () => clearInterval(updateTime);
   }, []);
-  console.log(hourDice, minuteDice, secondDice);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
     style: _objectSpread({
       display: "flex",
@@ -95,7 +93,8 @@ const DiceClock = props => {
       justifyContent: "space-evenly"
     }, secondStyle)
   }, /*#__PURE__*/_react.default.createElement(_index.Dice, (0, _extends2.default)({}, props, {
-    n: secondDice[0]
+    n: secondDice[0],
+    images: zeroToFive
   })), /*#__PURE__*/_react.default.createElement(_index.Dice, (0, _extends2.default)({}, props, {
     n: secondDice[1],
     images: secondDice[1] > 5 ? sixToNine : zeroToFive

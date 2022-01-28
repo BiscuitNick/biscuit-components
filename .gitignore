@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 
+# examples
+/examples/node_modules
+
+
 # testing
 /coverage
 

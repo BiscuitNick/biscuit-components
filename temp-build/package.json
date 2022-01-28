@@ -1,8 +1,8 @@
 {
-  "name": "biscuit-components",
+  "name": "biscuit-land-components",
   "description": "npm package test",
   "author": "BiscuitNick",
-  "version": "0.2.4",
+  "version": "0.2.7",
   "private": false,
   "files": [
     "dist",
