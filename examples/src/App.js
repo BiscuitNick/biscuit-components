@@ -1,8 +1,11 @@
-import { DiceClock, Biscuit } from "biscuit-land-components/dist";
+import { useState } from "react";
+import { DiceClock, Biscuit, Dice } from "biscuit-land-components/dist";
 
 // import { Stage, Layer, Rect } from "react-konva";
 
 function App() {
+  const [n, set] = useState(0);
+
   const height = window.innerHeight;
   const width = window.innerWidth;
   const wide = width > height;
@@ -26,8 +29,40 @@ function App() {
           justifyContent: "space-around",
         }}
       >
-        <DiceClock />
-        <Biscuit fill={"orange"} width={500} height={500} draggable={true} />
+        {/* <DiceClock
+          margin={20}
+          images={[
+            "https://www.pngall.com/wp-content/uploads/10/Pet-PNG-Images.png",
+            "https://www.pngall.com/wp-content/uploads/10/Pet-PNG-Images.png",
+            "https://www.pngall.com/wp-content/uploads/10/Pet-PNG-Images.png",
+            "https://www.pngall.com/wp-content/uploads/10/Pet-PNG-Images.png",
+            "https://www.pngall.com/wp-content/uploads/10/Pet-PNG-Images.png",
+            "https://www.pngall.com/wp-content/uploads/10/Pet-PNG-Images.png",
+            "https://www.pngall.com/wp-content/uploads/10/Pet-PNG-Images.png",
+            "https://www.pngall.com/wp-content/uploads/10/Pet-PNG-Images.png",
+            "https://www.pngall.com/wp-content/uploads/10/Pet-PNG-Images.png",
+            "https://www.pngall.com/wp-content/uploads/10/Pet-PNG-Images.png",
+          ]}
+          
+        /> */}
+
+        <Dice
+          n={n}
+          onClick={() => set(Math.floor(Math.random() * 6))}
+          images={[
+            "https://www.pngall.com/wp-content/uploads/10/Pet-PNG-Images.png",
+            "https://www.pngall.com/wp-content/uploads/10/Pet-PNG-Images.png",
+            "https://www.pngall.com/wp-content/uploads/10/Pet-PNG-Images.png",
+            "https://www.pngall.com/wp-content/uploads/10/Pet-PNG-Images.png",
+            "https://www.pngall.com/wp-content/uploads/10/Pet-PNG-Images.png",
+            "https://www.pngall.com/wp-content/uploads/10/Pet-PNG-Images.png",
+            "https://www.pngall.com/wp-content/uploads/10/Pet-PNG-Images.png",
+            "https://www.pngall.com/wp-content/uploads/10/Pet-PNG-Images.png",
+            "https://www.pngall.com/wp-content/uploads/10/Pet-PNG-Images.png",
+            "https://www.pngall.com/wp-content/uploads/10/Pet-PNG-Images.png",
+          ]}
+          size={Math.min(width, height) / 2}
+        />
       </div>
     </div>
   );

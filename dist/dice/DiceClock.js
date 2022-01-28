@@ -25,6 +25,7 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
+const diceDefaults = ["https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/0.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/1.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/2.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/3.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/4.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/5.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/6.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/7.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/8.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/9.png"];
 const hoursToDice = {
   0: [6, 6],
   1: [0, 1],
@@ -39,20 +40,20 @@ const hoursToDice = {
   10: [5, 5],
   11: [5, 6]
 };
-const zeroToFive = ["https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/0.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/1.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/2.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/3.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/4.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/5.png"];
-const sixToNine = ["https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/6.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/7.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/8.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/9.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/0.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/1.png"];
-const sixToFive = ["https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/6.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/1.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/2.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/3.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/4.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/5.png"];
-const oneToSix = ["https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/1.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/2.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/3.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/4.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/5.png", "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/6.png"];
 
 const DiceClock = props => {
   const {
     hourStyle,
     minuteStyle,
-    secondStyle
+    secondStyle,
+    images = diceDefaults
   } = props;
   const [hourDice, setHours] = (0, _react.useState)([6, 6]);
   const [minuteDice, setMinutes] = (0, _react.useState)([5, 9]);
   const [secondDice, setSeconds] = (0, _react.useState)([5, 9]);
+  const zeroToFive = [images[0 % images.length], images[1 % images.length], images[2 % images.length], images[3 % images.length], images[4 % images.length], images[5 % images.length]];
+  const sixToNine = [images[6 % images.length], images[7 % images.length], images[8 % images.length], images[9 % images.length], images[0 % images.length], images[1 % images.length]];
+  const sixToFive = [images[6 % images.length], images[1 % images.length], images[2 % images.length], images[3 % images.length], images[4 % images.length], images[5 % images.length]];
   (0, _react.useEffect)(() => {
     const updateTime = setInterval(() => {
       const now = new Date();
@@ -99,7 +100,31 @@ const DiceClock = props => {
     n: secondDice[1],
     images: secondDice[1] > 5 ? sixToNine : zeroToFive
   }))));
-};
+}; // const zeroToFive = [
+//   "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/0.png",
+//   "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/1.png",
+//   "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/2.png",
+//   "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/3.png",
+//   "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/4.png",
+//   "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/5.png",
+// ];
+// const sixToNine = [
+//   "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/6.png",
+//   "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/7.png",
+//   "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/8.png",
+//   "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/9.png",
+//   "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/0.png",
+//   "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/1.png",
+// ];
+// const sixToFive = [
+//   "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/6.png",
+//   "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/1.png",
+//   "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/2.png",
+//   "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/3.png",
+//   "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/4.png",
+//   "https://raw.githubusercontent.com/BiscuitNick/biscuit-components/master/public/images/5.png",
+// ];
+
 
 exports.DiceClock = DiceClock;
 DiceClock.__docgenInfo = {

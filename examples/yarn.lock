@@ -2561,10 +2561,10 @@ binary-extensions@^2.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
 
-biscuit-land-components@^2.1.4:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/biscuit-land-components/-/biscuit-land-components-2.1.4.tgz#411893edd5eb7726ffe64e572904f398f9aaa6e9"
-  integrity sha512-JNth6IC0spuEY4dhrVEk7zbAWnBBLABooUMkCWJpkZqhwUnC3tTHhCccHMXSC8QuPqvAq6w1O5qVUzPYc/e8yg==
+biscuit-land-components@^2.1.6:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/biscuit-land-components/-/biscuit-land-components-2.1.6.tgz#2b7ad5cf171725b3703eb0dde24ebd24caf7ffb1"
+  integrity sha512-LYIeYN1CXzBOWOO7LemiOt+VBYjjDEJ5JRjlf2WNXD4/ikm4dmkuMlVBGDddaTl7/Ch9NvMcsOBH/mhS6JgsbA==
   dependencies:
     "@react-spring/web" "^9.4.2"
     konva "^7.2.5"
